@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/Screens/HomePage.dart';
 import 'package:notes_app/Screens/LoginPage.dart';
+import 'package:notes_app/Screens/Register.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: Register(),
     );
   }
 }
