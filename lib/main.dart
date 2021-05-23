@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/Screens/HomePage.dart';
 import 'package:notes_app/Screens/LoginPage.dart';
 import 'package:notes_app/Screens/Register.dart';
+import 'package:notes_app/Theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        scaffoldBackgroundColor: ThemeColors.themeGrey,
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
       ),
       home: Register(),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/Screens/HomePage.dart';
+import 'package:notes_app/Screens/LoginPage.dart';
 import 'package:notes_app/Theme.dart';
 
 class Register extends StatefulWidget {
@@ -159,24 +160,46 @@ class RegisterState extends State<Register> {
                       ),
                       Padding(padding: EdgeInsets.all(20)),
                       Container(
-                          width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10)),
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  ThemeColors.themeRed),
-                            ),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                ThemeColors.themeRed),
+                          ),
+                          onPressed: () {
+                            //TODO: add login logic
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomePage(),
+                                ));
+                          },
+                          child: Text("REGISTER"),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "Already our friend?  ",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          TextButton(
                             onPressed: () {
-                              //TODO: add login logic
-                              Navigator.pushReplacement(
+                              Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => HomePage(),
+                                    builder: (context) => LoginPage(),
                                   ));
                             },
-                            child: Text("REGISTER"),
-                          )),
+                            child: Text(
+                              "Login Here :)",
+                              style: TextStyle(color: ThemeColors.themeRed),
+                            ),
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),
